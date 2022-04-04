@@ -32,7 +32,7 @@ class Api::V1::CruisesController < ApplicationController
     render json: { message: 'cruise successfully deleted' }
   end
 
-  private 
+  private
 
   def cruise_params
     params.require(:cruise).permit(:name, :description, :image, :user_id)
