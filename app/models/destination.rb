@@ -1,5 +1,5 @@
 class Destination < ApplicationRecord
-    has_many :reservations
+    belongs_to :reservation
 
     validates :city, presence: true
     validates :country, presence: true
