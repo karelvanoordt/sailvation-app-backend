@@ -10,7 +10,8 @@ class Api::V1::CruisesController < ApplicationController
 
   def create
     @user = User.find(params[:user_id])
-    @cruise = @user.cruise.create(cruise_params)
+    @cruise = @user.cruise.new(cruise_params)
+    @user.cruise = @cruise
     if @cruise.save
       render json: @cruise, status: :created
     else
