@@ -4,14 +4,18 @@ module Api
       before_action :set_reservation, only: :destroy
 
       def index
-        @reservations = current_user.reservations
+        @user = User.find(params[:user_id])
+        @reservations = @user.reservations
+
+        render json: @reservations
       end
 
       def create
-        @reservation = current_user.reservations.new(reservation_params)
+        @user = User.find(params[:user_id])
+        @reservation = @user.reservations.new(reservation_params)
 
         if @reservation.save
-          render :create, status: :created
+          render json: @reservation, status: :created
         else
           render json: @reservation.errors, status: :unprocessable_entity
         end
@@ -32,7 +36,7 @@ module Api
       end
 
       def reservation_params
-        params.require(:reservation).permit(:cruise, :destination, :user_id)
+        params.require(:reservation).permit(:cruise_id, :destination_id, :user_id, :start_date, :finish_date)
       end
     end
   end
