@@ -20,7 +20,7 @@ module Api
         @cruise = @user.cruises.create!(cruise_params)
         # @cruise.user_id = @user.id
         if @cruise.save
-          render json: @cruise, status: :created, location: @cruise
+          render json: @cruise, status: :created, location: api_v1_user_cruises_path(@cruise)
         else
           render json: @cruise.errors, status: :unprocessable_entity
         end
@@ -42,7 +42,7 @@ module Api
       private
 
       def cruise_params
-        params.require(:cruise).permit(:name, :description, :image)
+        params.require(:cruise).permit(:name, :description, :image, :user_id)
       end
     end
   end
