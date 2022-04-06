@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_04_091313) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_06_084613) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -21,6 +21,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_04_091313) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
+    t.decimal "daily_price"
     t.index ["user_id"], name: "index_cruises_on_user_id"
   end
 
@@ -39,7 +40,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_04_091313) do
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
     t.bigint "cruise_id", null: false
+    t.bigint "destination_id", null: false
     t.index ["cruise_id"], name: "index_reservations_on_cruise_id"
+    t.index ["destination_id"], name: "index_reservations_on_destination_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
@@ -51,5 +54,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_04_091313) do
 
   add_foreign_key "cruises", "users"
   add_foreign_key "reservations", "cruises"
+  add_foreign_key "reservations", "destinations"
   add_foreign_key "reservations", "users"
 end
