@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_08_093106) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_08_103816) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -41,8 +41,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_08_093106) do
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
     t.bigint "cruise_id", null: false
-    t.integer "destination_id"
+    t.bigint "destination_id", null: false
     t.index ["cruise_id"], name: "index_reservations_on_cruise_id"
+    t.index ["destination_id"], name: "index_reservations_on_destination_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
@@ -55,5 +56,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_08_093106) do
 
   add_foreign_key "cruises", "users"
   add_foreign_key "reservations", "cruises"
+  add_foreign_key "reservations", "destinations"
   add_foreign_key "reservations", "users"
 end
