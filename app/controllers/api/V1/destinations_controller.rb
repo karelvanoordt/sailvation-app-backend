@@ -7,7 +7,7 @@ module Api
       end
 
       def create
-        @destination = Destinations.new(destination_params)
+        @destination = Destination.new(destination_params)
 
         if @destination.save
           render json: @destination, status: :created
