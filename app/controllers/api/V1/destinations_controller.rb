@@ -24,7 +24,7 @@ module Api
       private
 
       def destination_params
-        params.require(:destination).permit(:reservation_id, :country, :city, :image, :price, :days)
+        params.require(:destination).permit(:country, :city, :image, :price, :days)
       end
     end
   end
