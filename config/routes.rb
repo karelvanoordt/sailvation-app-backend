@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   namespace :api do
     namespace :v1 do
-      resources :destinations, only: %i[index show]
+      resources :destinations, only: %i[index show create]
       resources :users do
         resources :cruises, only: %i[index show create destroy]
         resources :reservations, only: %i[index show create destroy]
