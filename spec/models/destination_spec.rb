@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Destination, type: :model do
   subject do
-    Destination.new(country: 'Italy', city:'Sorrento', image: 'sorrento.png')
+    Destination.new(country: 'Italy', city: 'Sorrento', image: 'sorrento.png')
   end
 
   before { subject.save }
