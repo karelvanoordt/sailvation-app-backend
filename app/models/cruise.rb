@@ -3,5 +3,5 @@ class Cruise < ApplicationRecord
   has_many :reservations
 
   validates :name, :description, :image, presence: true
-  validates :daily_price, numericality: { greater_than: 0, less_than: 1000000 }
+  validates :daily_price, numericality: { greater_than: 0, less_than: 1_000_000 }
 end
