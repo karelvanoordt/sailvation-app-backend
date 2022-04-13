@@ -6,6 +6,9 @@ ruby '3.1.0'
 # Rubocop
 gem 'rubocop', '>= 1.0', '< 2.0'
 
+# Rswag
+gem 'rswag'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.2', '>= 7.0.2.3'
 
