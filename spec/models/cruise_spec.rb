@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe Cruise, type: :model do
   subject do
     @test_user = User.new(
-      name: 'Jack'
+      name: 'Jack',
+      email: 'jack@gmail.com'
     )
     @test_cruise = @test_user.cruises.new(
       name: 'Titanic',
