@@ -34,7 +34,7 @@ module Api
         end
       end
 
-      def delete
+      def destroy
         @cruise.destroy
         render json: { message: 'cruise successfully deleted' }
       end
