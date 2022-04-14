@@ -1,6 +1,7 @@
 module Api
   module V1
     class CruisesController < ApplicationController
+      
       def index
         @cruises = Cruise.all
         render json: @cruises
