@@ -1,7 +1,6 @@
 module Api
   module V1
     class CruisesController < ApplicationController
-
       before_action :set_cruise, only: :destroy
 
       def index
