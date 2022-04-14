@@ -1,7 +1,6 @@
 module Api
   module V1
     class CruisesController < ApplicationController
-
       before_action :set_cruise, only: :destroy
 
       def index
@@ -21,7 +20,6 @@ module Api
       def create
         @user = User.find(params[:user_id])
         @cruise = @user.cruises.create!(cruise_params)
-        # @cruise.user_id = @user.id
         if @cruise.save
           render json: @cruise, status: :created, location: api_v1_user_cruises_path(@cruise)
         else
