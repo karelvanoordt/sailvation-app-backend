@@ -5,6 +5,11 @@ An api with end points to create/view/delete/update Reservations for cruise trip
 # Live link for API
 
  [Click Me!](https://vacayhome-api.herokuapp.com/api-docs/index.html)
+
+## Frontend Repository:
+
+[sailvation-app-frontend](https://github.com/karelvanoordt/sailvation-app-frontend)
+
 ## Built With
 
 - Ruby version 3.1.1
@@ -46,7 +51,7 @@ For Cruises:
 
 
 **If you need further information about the endpoints you can view the documentation navigating to `/api-docs`.
-Or you can just click this [link](https://pacific-lake-89990.herokuapp.com//api-docs/index.html)**
+Or you can just click this [link](https://pacific-lake-89990.herokuapp.com/api-docs/index.html)**
 
 If you prefer to clone the project locally, you can also get to the docs by navigating to http://`domain`:`port`/api-docs. Where `domain` is the domain of your server and `port` is the port of your server.
 For example, if your server is running on port 3000, you can navigate to http://localhost:3000/api-docs.
