@@ -36,7 +36,7 @@ module Api
       end
 
       def reservation_params
-        params.require(:reservation).permit(:cruise_id, :destination_id, :user_id, :start_date, :finish_date)
+        params.require(:reservation).permit(:cruise_id, :destination_id, :user_id, :start_date)
       end
     end
   end

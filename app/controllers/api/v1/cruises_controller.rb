@@ -1,7 +1,9 @@
 module Api
   module V1
     class CruisesController < ApplicationController
-      
+
+      before_action :set_cruise, only: :destroy
+
       def index
         @cruises = Cruise.all
         render json: @cruises
@@ -34,7 +36,7 @@ module Api
         end
       end
 
-      def delete
+      def destroy
         @cruise.destroy
         render json: { message: 'cruise successfully deleted' }
       end
@@ -43,6 +45,10 @@ module Api
 
       def cruise_params
         params.require(:cruise).permit(:name, :description, :image, :user_id)
+      end
+
+      def set_cruise
+        @cruise = Cruise.find(params[:id])
       end
     end
   end
