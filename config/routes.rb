@@ -1,0 +1,20 @@
+# frozen_string_literal: true
+
+Rails.application.routes.draw do
+  mount Rswag::Ui::Engine => '/api-docs'
+  mount Rswag::Api::Engine => '/api-docs'
+  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+
+
+  # Defines the root path route ("/")
+  # root "articles#index"
+  namespace :api do
+    namespace :v1 do
+      resources :destinations, only: %i[index show create]
+      resources :users do
+        resources :cruises, only: %i[index show create destroy]
+        resources :reservations, only: %i[index show create destroy]
+      end
+    end
+  end
+end
