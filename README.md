@@ -16,6 +16,10 @@ An api with end points to create/view/delete/update Reservations for cruise trip
 - RoR version 7
 ## Getting Started
 
+## Kanban Board
+[Click here to see the Kanban Board](https://github.com/karelvanoordt/sailvation-app-backend/projects/1)
+
+
 The API will receive POST requests to create Cruises and Reservations and GET requests to view Users, Cruises and Reservations.
 The base URL is: https://pacific-lake-89990.herokuapp.com/api/v1/
 
